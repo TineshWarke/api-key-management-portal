@@ -4,9 +4,9 @@
   "description": "API Key Management Portal Backend",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "node api.js && tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "node api.js && node dist/server.js",
     "migrate": "tsx src/database/migrate.ts"
   },
   "dependencies": {

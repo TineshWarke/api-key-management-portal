@@ -2,19 +2,19 @@
 .layout-root {
   display: flex;
   min-height: 100vh;
-  background: #f4f6fb;
+  background: #f9fafb;
   font-family: "Inter", sans-serif;
 }
 
 /* Sidebar */
 .sidebar {
   width: 240px;
-  background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
-  color: #f3f4f6;
+  background: linear-gradient(180deg, #0f766e 0%, #115e59 100%);
+  color: #f8fafc;
   display: flex;
   flex-direction: column;
   padding: 24px 16px;
-  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar-title {
@@ -34,7 +34,7 @@
 }
 
 .nav-link {
-  color: #cbd5e1;
+  color: #d1fae5;
   padding: 10px 14px;
   border-radius: 8px;
   text-decoration: none;
@@ -43,22 +43,22 @@
 }
 
 .nav-link:hover {
-  background: #374151;
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  transform: translateX(2px);
+  transform: translateX(3px);
 }
 
 .nav-link.active {
-  background: #2563eb;
+  background: #f97316;
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 3px 10px rgba(249, 115, 22, 0.3);
 }
 
 /* Sidebar Footer */
 .sidebar-footer {
   margin-top: auto;
   padding-top: 20px;
-  border-top: 1px solid #374151;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .logout-btn {
@@ -66,17 +66,17 @@
   padding: 10px;
   border: none;
   border-radius: 6px;
-  background: #374151;
-  color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .logout-btn:hover {
-  background: #dc2626;
-  color: #fff;
+  background: #f97316;
+  color: #ffffff;
 }
 
 /* Main Area */
@@ -94,7 +94,7 @@
   align-items: center;
   padding: 0 24px;
   background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
@@ -102,18 +102,18 @@
 }
 
 .logout-header-btn {
-  background: #2563eb;
+  background: linear-gradient(135deg, #14b8a6, #f97316);
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .logout-header-btn:hover {
-  background: #1e40af;
+  background: linear-gradient(135deg, #0d9488, #ea580c);
   transform: scale(1.05);
 }
 

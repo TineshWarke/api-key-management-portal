@@ -28,19 +28,19 @@
 /* Refresh Button */
 .refresh-btn {
   padding: 8px 14px;
-  background: #2563eb;
+  background: linear-gradient(135deg, #14b8a6, #f97316);
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.25s ease, transform 0.1s ease;
+  transition: all 0.25s ease;
 }
 
 .refresh-btn:hover {
-  background: #1e40af;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #0d9488, #ea580c);
+  transform: translateY(-2px);
 }
 
 /* Loading and Error States */
@@ -69,12 +69,12 @@
   margin-top: 8px;
 }
 
-/* Metric Card (overrides default) */
+/* Metric Card */
 .metric-card {
   background: linear-gradient(145deg, #ffffff, #f8fafc);
   border-radius: 12px;
   padding: 24px;
-  border-top: 5px solid var(--accent-color, #2563eb);
+  border-top: 5px solid var(--accent-color, #14b8a6);
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
   display: flex;
   flex-direction: column;

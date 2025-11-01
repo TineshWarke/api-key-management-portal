@@ -23,14 +23,11 @@ router.get("/details", async (req, res) => {
     const providedKey = parts[1].trim();
     if (!providedKey) return res.status(401).json({ error: "Empty API key" });
 
-    // Quick filter by prefix to reduce rows to verify
     const prefix = keyPrefix(providedKey);
 
-    // Expire any outdated keys before checking
     await sql`UPDATE api_keys SET status = 'expired', updated_at = now()
               WHERE expiry_date IS NOT NULL AND expiry_date < now() AND status != 'expired'`;
 
-    // Find matching candidate keys by prefix
     const candidates = await sql`
       SELECT ak.*, c.name AS client_name, c.email AS client_email, c.organization
       FROM api_keys ak
@@ -42,12 +39,10 @@ router.get("/details", async (req, res) => {
       return res.status(401).json({ error: "Invalid API key" });
     }
 
-    // Try to match via bcrypt (only one should match)
     for (const row of candidates) {
       const ok = await verifyApiKey(providedKey, row.key_hash);
       if (!ok) continue;
 
-      // Check status & dates
       if (row.status !== "active")
         return res.status(403).json({ error: "API key inactive" });
 
@@ -59,7 +54,6 @@ router.get("/details", async (req, res) => {
       if (expiryDate && now > expiryDate)
         return res.status(403).json({ error: "API key expired" });
 
-      // Return client details (safe subset)
       const client = {
         id: row.client_id,
         name: row.client_name,
